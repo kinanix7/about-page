@@ -573,6 +573,13 @@ body {
       
       .location-icon {
         font-size: 24px;
+        
+        img {
+          border-radius: 8px;
+          width: 24px;
+          height: 24px;
+          object-fit: cover;
+        }
       }
       
       span {
