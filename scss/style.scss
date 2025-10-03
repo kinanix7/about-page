@@ -234,10 +234,10 @@ body {
   background: $bg-light;
   
   .history-image {
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(135deg, #ff6b6b, $primary-color);
+    width: 680px;
+    height: 816.84px;
     border-radius: 20px;
+    object-fit: cover;
   }
   
   .history-content {
@@ -265,10 +265,10 @@ body {
   background: $white;
   
   .mission-image {
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(135deg, #4a90e2, #357abd);
+    width: 500px;
+    height: 610.84px;
     border-radius: 20px;
+    object-fit: cover;
   }
   
   .mission-content {

@@ -44,9 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: 'power3.out'
     });
     
-    // Hero circle animation - removed as element no longer exists
-    // Floating cards animation - updated to target new elements
-    gsap.from('.burger-image-simple', {
+    // Hero circle animation
+    gsap.from('.hero-circle', {
+        scale: 0,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: 'elastic.out(1, 0.5)'
+    });
+    
+    // Floating cards animation
+    gsap.from('.burger-card', {
         opacity: 0,
         x: -50,
         duration: 1,
@@ -54,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: 'power3.out'
     });
     
-    gsap.from('.delivery-icon-simple', {
+    gsap.from('.delivery-card', {
         opacity: 0,
         x: 50,
         duration: 1,
@@ -63,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Floating animation for cards
-    gsap.to('.burger-image-simple', {
+    gsap.to('.burger-card', {
         y: -10,
         duration: 2,
         repeat: -1,
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ease: 'power1.inOut'
     });
     
-    gsap.to('.delivery-icon-simple', {
+    gsap.to('.delivery-card', {
         y: -15,
         duration: 2.5,
         repeat: -1,
@@ -176,31 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Timeline cards stagger animation
-    // Debug: Check if timeline cards exist
-    const timelineCards = document.querySelectorAll('.timeline-card');
-    console.log('Found timeline cards:', timelineCards.length);
-    
-    if (timelineCards.length > 0) {
-        gsap.from('.timeline-card', {
-            scrollTrigger: {
-                trigger: '.timeline-cards',
-                start: 'top 80%',
-                onEnter: () => {
-                    console.log('Timeline cards animation triggered');
-                }
-            },
-            opacity: 0,
-            y: 80,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out',
-            onStart: () => {
-                console.log('Timeline cards animation started');
-            }
-        });
-    } else {
-        console.log('No timeline cards found for animation');
-    }
+    gsap.from('.timeline-card', {
+        scrollTrigger: {
+            trigger: '.timeline-cards',
+            start: 'top 80%'
+        },
+        opacity: 0,
+        y: 80,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+    });
     
     // Partners Section
     gsap.from('.partners-section .section-label', {
@@ -341,7 +335,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Parallax effect for hero circle - removed as element no longer exists
+    // Parallax effect for hero circle
+    gsap.to('.hero-circle', {
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+        },
+        y: 100,
+        scale: 0.8,
+        opacity: 0.5
+    });
     
     console.log('GSAP animations initialized successfully!');
 });
