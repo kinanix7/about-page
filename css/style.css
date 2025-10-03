@@ -209,6 +209,7 @@ body {
 .hero-section .hero-image-container .floating-card.delivery-card p {
   font-size: 14px;
   line-height: 1.4;
+
 }
 
 .stats-section {
@@ -348,16 +349,16 @@ body {
   margin: 0;
 }
 .journey-section .timeline-cards .timeline-card.card-green .timeline-year { 
-  color: #27ae60; 
+  color:#e64025; 
 }
 .journey-section .timeline-cards .timeline-card.card-blue .timeline-year { 
-  color: #2980b9; 
+  color:#e64025; 
 }
 .journey-section .timeline-cards .timeline-card.card-orange .timeline-year { 
-  color: #e67e22; 
+  color: #e64025; 
 }
 .journey-section .timeline-cards .timeline-card.card-purple .timeline-year { 
-  color: #8e44ad; 
+  color: #e64025; 
 }
 
 .partners-section {
@@ -484,13 +485,19 @@ body {
   background: #f8f9fa;
   padding: 60px 0 30px;
 }
+.footer .footer-brand .logo-container .logo-image {
+  height: 40px;
+  width: auto;
+}
 .footer .footer-brand .footer-description {
   color: #6b6b6b;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 300px;
 }
 .footer .footer-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   color: #1a1a1a;
@@ -505,7 +512,7 @@ body {
 .footer .footer-links li a {
   color: #6b6b6b;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 .footer .footer-links li a:hover {
@@ -523,30 +530,35 @@ body {
 }
 .footer .location-list .location-item span {
   color: #6b6b6b;
-  font-size: 15px;
+  font-size: 16px;
 }
 .footer .download-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
 .footer .download-buttons .btn-download {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 24px;
+  padding: 16px 24px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  width: fit-content;
+  min-width: 220px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .footer .download-buttons .btn-download.btn-ios {
-  background: #007aff;
+  background: #000000;
   color: #ffffff;
 }
 .footer .download-buttons .btn-download.btn-ios:hover {
-  background: rgb(0, 97.6, 204);
-  transform: translateY(-2px);
+  background: #333333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 .footer .download-buttons .btn-download.btn-android {
   background: #FF5733;
@@ -554,10 +566,11 @@ body {
 }
 .footer .download-buttons .btn-download.btn-android:hover {
   background: #ff2d00;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 87, 51, 0.3);
 }
 .footer .download-buttons .btn-download .download-icon {
-  font-size: 20px;
+  font-size: 24px;
 }
 .footer .copyright {
   color: #6b6b6b;
@@ -568,39 +581,65 @@ body {
   .hero-title {
     font-size: 36px !important;
   }
+  
   .section-title {
     font-size: 32px !important;
   }
+  
   .hero-image-container {
     height: 400px !important;
     margin-top: 40px;
+    
+    .hero-circle {
+      width: 350px !important;
+      height: 350px !important;
+    }
   }
-  .hero-image-container .hero-circle {
-    width: 350px !important;
-    height: 350px !important;
-  }
+  
   .history-content,
   .mission-content,
   .journey-intro {
     padding: 0 !important;
     margin-top: 40px;
   }
+  
+  .footer .download-buttons .btn-download {
+    min-width: 100%;
+  }
+  
+  .footer .footer-description {
+    max-width: 100%;
+  }
 }
+
 @media (max-width: 767px) {
   .hero-title {
     font-size: 28px !important;
   }
+  
   .section-title {
     font-size: 26px !important;
   }
+  
   .stat-number {
     font-size: 40px !important;
   }
+  
   .timeline-card {
     padding: 24px !important;
   }
+  
   .press-card {
     padding: 24px !important;
+  }
+  
+  .footer .download-buttons .btn-download {
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  
+  .footer .download-buttons .btn-download .download-icon {
+    font-size: 20px;
   }
 }
 
