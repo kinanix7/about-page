@@ -279,83 +279,102 @@ body {
 // Journey Section
 .journey-section {
   padding: 80px 0;
-  background: $bg-light;
+  background: #f9f9f9;
   
   .journey-intro {
     padding-right: 40px;
     
-    .btn-primary {
-      background: $primary-color;
-      border: none;
-      color: $white;
-      padding: 12px 32px;
-      border-radius: 8px;
+    .section-label {
+      font-size: 14px;
+      text-transform: uppercase;
       font-weight: 600;
-      @include transition();
+      color: #ff4d30;
+      margin-bottom: 10px;
+    }
+    
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #111;
+    }
+    
+    .section-description {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 6px;
+      background: #ff4d30;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      border: none;
       
       &:hover {
-        background: darken($primary-color, 10%);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+        background: #e64025;
+        transform: none;
+        box-shadow: none;
       }
     }
   }
   
   .timeline-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     
     .timeline-card {
-      padding: 32px;
-      border-radius: 16px;
-      border: 3px solid transparent;
-      @include transition();
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      }
-      
-      &.card-green {
-        background: $card-green;
-        border-color: darken($card-green, 20%);
-      }
-      
-      &.card-blue {
-        background: $card-blue;
-        border-color: darken($card-blue, 20%);
-      }
-      
-      &.card-orange {
-        background: $card-orange;
-        border-color: darken($card-orange, 20%);
-      }
-      
-      &.card-purple {
-        background: $card-purple;
-        border-color: darken($card-purple, 20%);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       }
       
       .timeline-year {
-        color: $primary-color;
         font-weight: 700;
         font-size: 18px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
       
       .timeline-title {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 16px;
-        color: $text-dark;
+        color: #111;
+        margin-bottom: 12px;
       }
       
       .timeline-description {
         font-size: 15px;
-        color: $text-gray;
-        line-height: 1.7;
+        line-height: 1.6;
+        color: #555;
         margin: 0;
+      }
+      
+      &.card-green .timeline-year { 
+        color: #27ae60; 
+      }
+      
+      &.card-blue .timeline-year { 
+        color: #2980b9; 
+      }
+      
+      &.card-orange .timeline-year { 
+        color: #e67e22; 
+      }
+      
+      &.card-purple .timeline-year { 
+        color: #8e44ad; 
       }
     }
   }
