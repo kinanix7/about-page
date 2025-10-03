@@ -1,0 +1,661 @@
+// Variables
+$primary-color: #FF5733;
+$secondary-color: #FF6B4A;
+$text-dark: #1a1a1a;
+$text-gray: #6b6b6b;
+$bg-light: #f8f9fa;
+$white: #ffffff;
+
+// Card colors
+$card-green: #e8f5e9;
+$card-blue: #e3f2fd;
+$card-orange: #fff3e0;
+$card-purple: #f3e5f5;
+
+// Mixins
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease;
+}
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: $text-dark;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// Navigation
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .logo-image {
+      height: 40px;
+      width: auto;
+    }
+    
+    .logo-icon {
+      font-size: 32px;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      padding: 8px;
+      border-radius: 8px;
+    }
+    
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: $text-dark;
+    }
+  }
+  
+  .nav-link {
+    color: $text-dark;
+    font-weight: 500;
+    padding: 8px 16px;
+    @include transition();
+    
+    &:hover, &.active {
+      color: $primary-color;
+    }
+  }
+  
+  .btn-outline-primary {
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    @include transition();
+    
+    &:hover {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+  
+  .btn-primary {
+    background: $primary-color;
+    border: none;
+    color: $white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    @include transition();
+    
+    &:hover {
+      background: darken($primary-color, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+  }
+}
+
+// Section Label
+.section-label {
+  color: $primary-color;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+// Hero Section
+.hero-section {
+  padding: 80px 0;
+  background: $bg-light;
+  
+  .hero-content {
+    padding-right: 40px;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: $text-dark;
+  }
+  
+  .hero-description {
+    font-size: 18px;
+    color: $text-gray;
+    line-height: 1.8;
+  }
+  
+  .hero-image-container {
+    position: relative;
+    height: 600px;
+    
+    .hero-circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .delivery-person {
+        width: 499.98px;
+        height: 563.58px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        
+        .delivery-person-image {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    
+    .burger-image-simple {
+      position: absolute;
+      bottom: 100px;
+      left: 0;
+      width: 225px;
+      height: 260.56px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      z-index: 3;
+    }
+    
+    .delivery-icon-simple {
+      position: absolute;
+      bottom: 50px;
+      right: 0;
+      width: 290px;
+      height: 119px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      z-index: 3;
+    }
+  }
+}
+
+// Stats Section
+.stats-section {
+  padding: 60px 0;
+  background: $white;
+  
+  .stat-item {
+    padding: 20px;
+    
+    .stat-number {
+      font-size: 56px;
+      font-weight: 800;
+      color: $text-dark;
+      margin-bottom: 8px;
+      
+      .accent {
+        color: $primary-color;
+      }
+    }
+    
+    .stat-label {
+      font-size: 16px;
+      color: $text-gray;
+      margin: 0;
+    }
+  }
+}
+
+// Company History Section
+.company-history {
+  padding: 80px 0;
+  background: $bg-light;
+  
+  .history-image {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #ff6b6b, $primary-color);
+    border-radius: 20px;
+  }
+  
+  .history-content {
+    padding-left: 40px;
+  }
+  
+  .section-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    color: $text-dark;
+  }
+  
+  .section-description {
+    font-size: 16px;
+    color: $text-gray;
+    line-height: 1.8;
+  }
+}
+
+// Mission Section
+.mission-section {
+  padding: 80px 0;
+  background: $white;
+  
+  .mission-image {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border-radius: 20px;
+  }
+  
+  .mission-content {
+    padding-right: 40px;
+  }
+}
+
+// Journey Section
+.journey-section {
+  padding: 80px 0;
+  background: $bg-light;
+  
+  .journey-intro {
+    padding-right: 40px;
+    
+    .btn-primary {
+      background: $primary-color;
+      border: none;
+      color: $white;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      @include transition();
+      
+      &:hover {
+        background: darken($primary-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+      }
+    }
+  }
+  
+  .timeline-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    
+    .timeline-card {
+      padding: 32px;
+      border-radius: 16px;
+      border: 3px solid transparent;
+      @include transition();
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+      
+      &.card-green {
+        background: $card-green;
+        border-color: darken($card-green, 20%);
+      }
+      
+      &.card-blue {
+        background: $card-blue;
+        border-color: darken($card-blue, 20%);
+      }
+      
+      &.card-orange {
+        background: $card-orange;
+        border-color: darken($card-orange, 20%);
+      }
+      
+      &.card-purple {
+        background: $card-purple;
+        border-color: darken($card-purple, 20%);
+      }
+      
+      .timeline-year {
+        color: $primary-color;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      
+      .timeline-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: $text-dark;
+      }
+      
+      .timeline-description {
+        font-size: 15px;
+        color: $text-gray;
+        line-height: 1.7;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Partners Section
+.partners-section {
+  padding: 80px 0;
+  background: $white;
+  
+  .section-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: $text-dark;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-description {
+    font-size: 16px;
+    color: $text-gray;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .partner-card {
+    padding: 40px 20px;
+    @include transition();
+    
+    &:hover {
+      transform: translateY(-8px);
+      
+      .partner-icon {
+        transform: scale(1.1);
+      }
+    }
+    
+    .partner-icon {
+      font-size: 80px;
+      margin-bottom: 24px;
+      display: inline-block;
+      @include transition(transform, 0.3s);
+    }
+    
+    .partner-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: $text-dark;
+    }
+    
+    .partner-description {
+      font-size: 15px;
+      color: $text-gray;
+      line-height: 1.7;
+    }
+  }
+}
+
+// Press Section
+.press-section {
+  padding: 80px 0;
+  background: $bg-light;
+  
+  .section-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: $text-dark;
+  }
+  
+  .press-card {
+    padding: 40px;
+    border-radius: 16px;
+    height: 100%;
+    border: 3px solid transparent;
+    @include transition();
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    &.press-card-green {
+      background: $card-green;
+      border-color: darken($card-green, 20%);
+    }
+    
+    &.press-card-blue {
+      background: $card-blue;
+      border-color: darken($card-blue, 20%);
+    }
+    
+    &.press-card-orange {
+      background: $card-orange;
+      border-color: darken($card-orange, 20%);
+    }
+    
+    &.press-card-purple {
+      background: $card-purple;
+      border-color: darken($card-purple, 20%);
+    }
+    
+    .press-logo {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: $text-dark;
+    }
+    
+    .press-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: $text-dark;
+      line-height: 1.4;
+    }
+    
+    .press-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .press-link {
+        color: $primary-color;
+        font-weight: 600;
+        text-decoration: none;
+        @include transition();
+        
+        &:hover {
+          color: darken($primary-color, 10%);
+          text-decoration: underline;
+        }
+      }
+      
+      .press-date {
+        color: $text-gray;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  background: $bg-light;
+  padding: 60px 0 30px;
+  
+  .footer-brand {
+    .footer-description {
+      color: $text-gray;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  }
+  
+  .footer-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $text-dark;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: 12px;
+      
+      a {
+        color: $text-gray;
+        text-decoration: none;
+        font-size: 15px;
+        @include transition();
+        
+        &:hover {
+          color: $primary-color;
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+  
+  .location-list {
+    .location-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      
+      .location-icon {
+        font-size: 24px;
+      }
+      
+      span {
+        color: $text-gray;
+        font-size: 15px;
+      }
+    }
+  }
+  
+  .download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    .btn-download {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      @include transition();
+      
+      &.btn-ios {
+        background: #007aff;
+        color: $white;
+        
+        &:hover {
+          background: darken(#007aff, 10%);
+          transform: translateY(-2px);
+        }
+      }
+      
+      &.btn-android {
+        background: $primary-color;
+        color: $white;
+        
+        &:hover {
+          background: darken($primary-color, 10%);
+          transform: translateY(-2px);
+        }
+      }
+      
+      .download-icon {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  .copyright {
+    color: $text-gray;
+    font-size: 14px;
+  }
+}
+
+// Responsive Design
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 36px !important;
+  }
+  
+  .section-title {
+    font-size: 32px !important;
+  }
+  
+  .hero-image-container {
+    height: 400px !important;
+    margin-top: 40px;
+    
+    .hero-circle {
+      width: 350px !important;
+      height: 350px !important;
+    }
+  }
+  
+  .history-content,
+  .mission-content,
+  .journey-intro {
+    padding: 0 !important;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 28px !important;
+  }
+  
+  .section-title {
+    font-size: 26px !important;
+  }
+  
+  .stat-number {
+    font-size: 40px !important;
+  }
+  
+  .timeline-card {
+    padding: 24px !important;
+  }
+  
+  .press-card {
+    padding: 24px !important;
+  }
+}
