@@ -551,23 +551,30 @@ body {
   font-size: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.footer .download-buttons .btn-download.btn-ios {
-  background: #000000;
+.download-buttons .btn-download {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  min-width: 220px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #E13F1F;
   color: #ffffff;
+  border: none;
 }
-.footer .download-buttons .btn-download.btn-ios:hover {
-  background: #333333;
+.download-buttons .btn-download:hover {
+  background: #974850;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
 }
-.footer .download-buttons .btn-download.btn-android {
-  background: #FF5733;
-  color: #ffffff;
-}
-.footer .download-buttons .btn-download.btn-android:hover {
-  background: #ff2d00;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(255, 87, 51, 0.3);
+.download-buttons .btn-download .download-icon {
+  font-size: 24px;
 }
 .footer .download-buttons .btn-download .download-icon {
   font-size: 24px;
